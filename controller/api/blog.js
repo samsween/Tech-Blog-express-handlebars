@@ -1,6 +1,6 @@
 const { Blog, User } = require("../../models/index");
 const { Router } = require("express");
-const { getSingleBlog } = require("../../lib/blogDb");
+const { getSingleBlog } = require("../../db/queries/blog");
 
 const requireUserOwnerMiddleware = require('../../middleware/requireUserOwnerMiddleware');
 
