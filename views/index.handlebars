@@ -1,0 +1,11 @@
+
+<div class="flex gap-4 flex-col max-w-5xl m-auto">
+  {{#if blogs.length}}
+    {{#each blogs}}
+      {{> blogList edit=false}}
+    {{/each }}
+  {{else}}
+    <p class="text-center text-4xl py-20">No blogs yet</p>
+      <a href="/dashboard" class="text-center text-blue-400 underline">Add a blog!</a>
+  {{/if}}
+</div>

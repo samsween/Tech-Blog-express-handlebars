@@ -1,0 +1,29 @@
+<div class="font-bold border-b border-indigo-400  p-10 flex flex-col gap-4  justify-center rounded-xl">
+    <h1 class="text-3xl">{{title}}</h1>
+
+    <div class="text-lg flex items-ceneter justify-between w-full ">
+        {{#if edit}}
+        <div class="flex gap-2">
+            <button data-id="{{id}}" class="w-full bg-indigo-500 edit p-2 rounded-md">Edit</button>
+            <button class="w-full bg-indigo-500 p-2 delete rounded-md" data-id="{{id}}">Delete</button>
+        </div>
+
+        {{else}}
+        <a href="/blog/{{id}}" class="p-2 rounded-xl border hover:text-indigo-400 ">Read more</a>
+        {{/if}}
+        {{#if edit}}
+        <div>
+             <p>Comments: {{comments.length}}</p>
+            <p>{{#formatDate date}} {{/formatDate}}</p>
+
+        </div>
+     
+        {{else}}
+        <div class="flex flex-col items-end text-sm">
+            <p>Created by: {{user.username}}</p>
+            <p>{{#formatDate date}} {{/formatDate}}</p>
+        </div>
+        {{/if}}
+      
+    </div>
+</div>

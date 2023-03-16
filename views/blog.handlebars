@@ -1,0 +1,30 @@
+
+
+
+   <main class="w-full relative z-10">
+        <div class="max-w-5xl m-auto flex justify-center flex-col gap-10 mt-16">
+            <h1 class="text-3xl uppercase">{{blog.title}}</h1>
+            <p class="text-xl">{{blog.body}}</p>
+            <div class=" flex flex-col gap-8 mt-4 w-full">
+                {{#if loggedIn}}
+                <form class="w-full flex gap-4 flex-col" id="comment-form" data-id="{{blog.id}}">
+                    <textarea type="text" class="w-full placeholder:text-gray-500 border border-gray-500" id="comment" rows="2" placeholder="Add a comment"></textarea>
+                    <button class="p-2 rounded-xl border hover:text-indigo-400 disabled:bg-gray-100">Post Comment</button>
+
+                </form>
+                {{else}}
+                <p class="text-xl text-center text-indigo-500">Login to comment</p>
+                {{/if}}
+                <div class="text-lg flex gap-2 flex-col  p-4">
+  
+                    {{#if blog.comments}}
+                        {{#each blog.comments}}
+                            {{> comment comment=this   }}
+                        {{/each}}
+                    {{else}}
+                        <p>No comments yet</p>
+                    {{/if}}
+                </div>
+            </div>
+        </div>
+    </main>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+</head>
+<body>
+    <nav class="w-full relative z-10 flex py-8 justify-between max-w-5xl m-auto">
+        <h1 class="px-8 text-3xl">The Blog Site</h1>
+        <ul class="px-8 text-xl flex gap-4">
+            <li><a href="/">Home</a></li>
+            {{#if loggedIn}}
+            <li><a href="/dashboard">Dashboard</a></li>
+                <li><button id="logout" href="/logout">Logout</button></li>
+            {{else}}
+                <li><a href="/login">Login</a></li>
+            {{/if}}
+        </ul>
+    </nav>
+    {{{body}}}
+</body>
+<script src="/public/bundle.js" defer></script>
+</html>
