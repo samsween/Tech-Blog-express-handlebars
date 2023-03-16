@@ -57,7 +57,7 @@ const createNewFormListener = () => {
   });
 };
 
-const createModal = (post) => {
+const createModal = (post = null) => {
   modal.innerHTML = "";
   modal.classList.remove("hidden");
   modal.classList.add("flex");
@@ -75,7 +75,7 @@ const createModal = (post) => {
             <textarea type="text" class="border border-gray-500 p-2" id="body" rows="4" value="${post ? post.body: ""}"
             placeholder="Body">${post ? post.body: ""}</textarea>
         </div>
-        <button class="p-2 rounded-xl border bg-indigo-200 text-xl hover:text-indigo-400 ">Edit</button>
+        <button class="p-2 rounded-xl border bg-indigo-200 text-xl hover:text-indigo-400 ">${post ? "Edit": "Add"}</button>
     </form>
 </div>
       `;
