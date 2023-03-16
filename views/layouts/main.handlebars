@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" >
+<html lang="en">
 
 <head>
     <meta charset="UTF-8">
@@ -33,10 +33,21 @@
 </body>
 <script src="/public/dist/bundle.js" defer></script>
 <script>
+    window.onload = () => {
+        const container = document.querySelector('html');
+        const toggle = document.querySelector('#flexSwitchCheckDefault');
+        const dark = localStorage.getItem('dark');
+        if (dark === 'true') {
+            container.classList.add('dark');
+            toggle.checked = true;
+        }
+    }
     const container = document.querySelector('html');
     const toggle = document.querySelector('#flexSwitchCheckDefault');
     toggle.addEventListener('change', () => {
+        localStorage.setItem('dark', toggle.checked);
         container.classList.toggle('dark');
     });
 </script>
+
 </html>
