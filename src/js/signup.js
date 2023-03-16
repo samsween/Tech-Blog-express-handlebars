@@ -1,5 +1,5 @@
 
-const form = document.querySelector('.login-form');
+const form = document.querySelector('.signup-form');
 const signupFormHandler = async (event) => {
     event.preventDefault();
     const username = document.getElementById('username').value.trim().toLowerCase();

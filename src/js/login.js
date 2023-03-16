@@ -2,7 +2,7 @@
 
 
 
-const form = document.querySelector('.signup-form');
+const form = document.querySelector('.login-form');
 // post login
 
 
