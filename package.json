@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "webpack serve",
+    "dev": "webpack serve && nodemon server.js",
     "build": "webpack"
   },
   "repository": {
@@ -27,6 +27,7 @@
     "express-session": "^1.17.3",
     "handlebars": "^4.7.7",
     "mysql2": "^3.2.0",
+    "npm-run-all": "^4.1.5",
     "sequelize": "^6.29.3"
   },
   "devDependencies": {
